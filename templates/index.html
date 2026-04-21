@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manmohan Yadav — Portfolio</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/user.png') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand brand-logo" href="/">
+                <span class="brand-logo-mark" aria-label="Man profile logo">
+                    <i class="bi bi-person-fill"></i>
+                </span>
+                <span class="brand-logo-text">Profile</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary btn-sm px-3" href="/static/assets/Resume.pdf" download>
+                            <i class="bi bi-download me-1"></i> Resume
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero-section d-flex align-items-center min-vh-100">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5 d-flex justify-content-center mt-4 mt-lg-0 order-1">
+                    <div class="hero-avatar-wrap">
+                        <div
+                            class="hero-avatar bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-circle d-flex align-items-center justify-content-center overflow-hidden">
+                            <img src="{{ url_for('static', filename='images/profile.jpeg') }}" alt="Manmohan Yadav"
+                                class="hero-avatar-image"
+                                onerror="this.style.display='none'; this.parentElement.classList.add('has-fallback');">
+                            <i class="bi bi-person-fill hero-avatar-fallback" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 order-2">
+                    <span
+                        class="badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-25 px-3 py-2 mb-4 d-inline-block">
+                        <i class="bi bi-circle-fill me-1" style="font-size:.5rem;vertical-align:middle;"></i>
+                        Available for hire
+                    </span>
+                    <h1 class="display-3 fw-bold lh-sm mb-3">
+                        Hi, I'm<br />
+                        <span class="text-primary">Manmohan Yadav</span>
+                    </h1>
+                    <p class="lead text-secondary mb-2">Python Developer &amp; Backend Engineer</p>
+                    <p class="text-secondary mb-4" style="max-width:520px;">
+                        I build scalable web applications and APIs using Python, Flask, and Supabase.
+                        Clean code, real results, and a passion for solving hard problems.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="#projects" class="btn btn-primary px-4">
+                            <i class="bi bi-grid me-2"></i>View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline-secondary px-4">
+                            <i class="bi bi-envelope me-2"></i>Get In Touch
+                        </a>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <span class="badge border border-secondary text-secondary px-3 py-2">Python</span>
+                        <span class="badge border border-secondary text-secondary px-3 py-2">Flask</span>
+                        <span class="badge border border-secondary text-secondary px-3 py-2">Django</span>
+                        <span class="badge border border-secondary text-secondary px-3 py-2">MySQL</span>
+                        <span class="badge border border-secondary text-secondary px-3 py-2">Supabase</span>
+                        <span class="badge border border-secondary text-secondary px-3 py-2">PostgreSQL</span>
+                        <span class="badge border border-secondary text-secondary px-3 py-2">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="page-section py-5 bg-dark border-top border-secondary">
+        <div class="container py-4">
+            <p class="text-primary small fw-semibold text-uppercase letter-spacing mb-1">01 — About Me</p>
+            <h2 class="display-5 fw-bold mb-5">Building things <em class="text-primary fst-italic">that matter.</em>
+            </h2>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <p class="text-secondary fs-5 mb-4">
+                        I'm a passionate Python developer with a knack for building clean, efficient
+                        backends and integrating modern data layers. I love turning complex problems
+                        into elegant, maintainable solutions.
+                    </p>
+                    <p class="text-secondary mb-4">
+                        When I'm not coding, you'll find me exploring new tech stacks, contributing
+                        to open source, or levelling up my machine learning skills.
+                    </p>
+                    <a href="/static/assets/Resume.pdf" class="btn btn-outline-primary" download>
+                        <i class="bi bi-file-earmark-person me-2"></i>Download Resume
+                    </a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="card bg-body-secondary border-secondary text-center p-4 h-100">
+                                <div class="display-5 fw-bold text-primary">6+</div>
+                                <div class="text-secondary small mt-1">Months coding</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card bg-body-secondary border-secondary text-center p-4 h-100">
+                                <div class="display-5 fw-bold text-primary">8+</div>
+                                <div class="text-secondary small mt-1">Projects built</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card bg-body-secondary border-secondary text-center p-4 h-100">
+                                <div class="display-5 fw-bold text-primary">5+</div>
+                                <div class="text-secondary small mt-1">Technologies</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card bg-body-secondary border-secondary text-center p-4 h-100">
+                                <div class="display-5 fw-bold text-primary">100%</div>
+                                <div class="text-secondary small mt-1">Dedication</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="page-section py-5 border-top border-secondary">
+        <div class="container py-4">
+            <p class="text-primary small fw-semibold text-uppercase letter-spacing mb-1">02 — Skills</p>
+            <h2 class="display-5 fw-bold mb-5">My tech <em class="text-primary fst-italic">arsenal.</em></h2>
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-body-secondary border-secondary h-100 p-4 skill-card">
+                        <div class="fs-1 mb-3">
+                            <img src="{{ url_for('static', filename='images/python.png') }}" alt="Python icon"
+                                class="skill-icon-image">
+                        </div>
+                        <h5 class="fw-bold mb-1">Python</h5>
+                        <div class="progress mb-3" style="height:3px;">
+                            <div class="progress-bar bg-danger" style="width:90%"></div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Flask</span>
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Django</span>
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-body-secondary border-secondary h-100 p-4 skill-card">
+                        <div class="fs-1 mb-3">
+                            <img src="{{ url_for('static', filename='images/supabase.png') }}" alt="Supabase icon"
+                                class="skill-icon-image">
+                        </div>
+                        <h5 class="fw-bold mb-1">Supabase / SQL</h5>
+                        <div class="progress mb-3" style="height:3px;">
+                            <div class="progress-bar bg-danger" style="width:80%"></div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">PostgreSQL</span>
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">REST
+                                API</span>
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Auth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-body-secondary border-secondary h-100 p-4 skill-card">
+                        <div class="fs-1 mb-3">
+                            <img src="{{ url_for('static', filename='images/web-backend.png') }}" alt="Supabase icon"
+                                class="skill-icon-image">
+                        </div>
+                        <h5 class="fw-bold mb-1">Web Backend</h5>
+                        <div class="progress mb-3" style="height:3px;">
+                            <div class="progress-bar bg-danger" style="width:85%"></div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">REST
+                                APIs</span>
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Jinja2</span>
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">JWT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-body-secondary border-secondary h-100 p-4 skill-card">
+                        <div class="fs-1 mb-3">
+                            <img src="{{ url_for('static', filename='images/Tools.png') }}" alt="Supabase icon"
+                                class="skill-icon-image">
+                        </div>
+                        <h5 class="fw-bold mb-1">Tools & DevOps</h5>
+                        <div class="progress mb-3" style="height:3px;">
+                            <div class="progress-bar bg-danger" style="width:70%"></div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Git</span>
+                            <span
+                                class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Linux</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="page-section py-5 bg-dark border-top border-secondary">
+        <div class="container py-4">
+            <p class="text-primary small fw-semibold text-uppercase letter-spacing mb-1">03 — Projects</p>
+            <h2 class="display-5 fw-bold mb-5">Things I've <em class="text-primary fst-italic">built.</em></h2>
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-body-secondary border-secondary h-100 project-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-primary small fw-semibold">01</span>
+                                <div class="d-flex gap-2">
+                                    <a href="https://github.com/mannu1709/Ai-resume-critiquer"
+                                        class="text-secondary small" target="_blank"><i
+                                            class="bi bi-github me-1"></i>GitHub</a>
+                                    <a href="https://ai-resume-critiquer-rdt9.onrender.com" class="text-secondary small"
+                                        target="_blank"><i class="bi bi-box-arrow-up-right me-1"></i>Live</a>
+                                </div>
+                            </div>
+                            <h5 class="fw-bold mb-2">Ai Resume Critiquer</h5>
+                            <p class="text-secondary small mb-3">
+                                Built an AI-powered resume analysis tool using Python and Streamlit that provides real-time feedback on content,
+                                keywords, and formatting to create ATS-friendly resumes.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Python</span>
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Flask</span>
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Supabase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-body-secondary border-secondary h-100 project-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-primary small fw-semibold">02</span>
+                                <div class="d-flex gap-2">
+                                    <a href="https://github.com/mannu1709/flask-auth" class="text-secondary small"
+                                        target="_blank"><i class="bi bi-github me-1"></i>GitHub</a>
+                                    <a href="https://flask-auth-lemon.vercel.app/login" class="text-secondary small"
+                                        target="_blank"><i class="bi bi-box-arrow-up-right me-1"></i>Live</a>
+                                </div>
+                            </div>
+                            <h5 class="fw-bold mb-2">flask auth</h5>
+                            <p class="text-secondary small mb-3">
+                                Flask Authentication System
+                                Created a user authentication system using Python and Flask with Supabase integration for secure login, logout, and
+                                database-backed user management.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Python</span>
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Flask</span>
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-body-secondary border-secondary h-100 project-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-primary small fw-semibold">03</span>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="text-secondary small" target="_blank"><i
+                                            class="bi bi-github me-1"></i>GitHub</a>
+                                    <a href="#" class="text-secondary small" target="_blank"><i
+                                            class="bi bi-box-arrow-up-right me-1"></i>Live</a>
+                                </div>
+                            </div>
+                            <h5 class="fw-bold mb-2">Portfolio Website</h5>
+                            <p class="text-secondary small mb-3">
+                                A responsive portfolio website built with Python, Flask, and Bootstrap, integrated with a contact form functionality.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Python</span>
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">JWT</span>
+                                <span
+                                    class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="https://github.com/mannu1709" target="_blank" class="btn btn-outline-primary px-4">
+                    <i class="bi bi-github me-2"></i>See More on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="page-section py-5 border-top border-secondary">
+        <div class="container py-4">
+            <p class="text-primary small fw-semibold text-uppercase letter-spacing mb-1">04 — Contact</p>
+            <h2 class="display-5 fw-bold mb-5">Let's work <em class="text-primary fst-italic">together.</em></h2>
+            <div class="row g-5">
+
+                <div class="col-lg-5">
+                    <p class="text-secondary mb-4">
+                        Have a project in mind or just want to say hello? Drop me a message —
+                        I usually reply within 24 hours.
+                    </p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li>
+                            <a href="#" class="text-secondary text-decoration-none d-flex align-items-center gap-2">
+                                <i class="bi bi-telephone text-primary"></i> 78790977772
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:manmohany810@gmail.com"
+                                class="text-secondary text-decoration-none d-flex align-items-center gap-2">
+                                <i class="bi bi-envelope text-primary"></i> manmohany810@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mannu1709" target="_blank"
+                                class="text-secondary text-decoration-none d-flex align-items-center gap-2">
+                                <i class="bi bi-github text-primary"></i> github.com/mannu1709
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/manmohan-yadav-56538a254/" target="_blank"
+                                class="text-secondary text-decoration-none d-flex align-items-center gap-2">
+                                <i class="bi bi-linkedin text-primary"></i> linkedin.com/in/Manmohan-Yadav
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-7">
+                    <div id="formStatus" class="mb-3" style="min-height:24px;"></div>
+                    <div class="d-flex flex-column gap-3">
+                        <div>
+                            <label class="form-label text-secondary small text-uppercase" for="name">Name</label>
+                            <input type="text" class="form-control bg-body-secondary border-secondary" id="name"
+                                placeholder="Your name" />
+                        </div>
+                        <div>
+                            <label class="form-label text-secondary small text-uppercase" for="email">Email</label>
+                            <input type="email" class="form-control bg-body-secondary border-secondary" id="email"
+                                placeholder="your@email.com" />
+                        </div>
+                        <div>
+                            <label class="form-label text-secondary small text-uppercase" for="message">Message</label>
+                            <textarea class="form-control bg-body-secondary border-secondary" id="message" rows="5"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button class="btn btn-primary w-100 py-2" id="sendBtn" onclick="sendContact()">
+                            <i class="bi bi-send me-2"></i>Send Message
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="py-4 bg-dark border-top border-secondary">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <span class="fw-bold text-primary">Profile</span>
+                <p class="text-secondary small mb-0">Built with Flask &amp; Bootstrap · © 2025 Manmohan Yadav</p>
+                <div class="d-flex gap-3">
+                    <a href="https://github.com/mannu1709" target="_blank" class="text-secondary"><i
+                            class="bi bi-github fs-5"></i></a>
+                    <a href="https://www.linkedin.com/in/manmohan-yadav-56538a254/" target="_blank"
+                        class="text-secondary"><i class="bi bi-linkedin fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
