@@ -13,46 +13,42 @@ document.querySelectorAll('.card, .hero-section .badge, .display-3').forEach(el 
     observer.observe(el);
 });
 
-// ---- CONTACT FORM ----
-async function sendContact() {
-    const btn = document.getElementById('sendBtn');
-    const status = document.getElementById('formStatus');
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+// for Form 
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (!name || !email || !message) {
-        status.innerHTML = `<div class="alert alert-danger py-2 small">Please fill in all fields.</div>`;
-        return;
-    }
+    const form = document.getElementById("contactForm");
+    const statusDiv = document.getElementById("formStatus");
 
-    btn.disabled = true;
-    btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span>Sending...`;
-    status.innerHTML = '';
+    if (form) {
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
 
-    try {
-        const res = await fetch('/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, message })
+            const data = new FormData(form);
+
+            statusDiv.innerHTML = "Sending...";
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    statusDiv.innerHTML = "<span class='text-success'>Thank you! Your message has been sent.</span>";
+                    form.reset();
+                } else {
+                    statusDiv.innerHTML = "<span class='text-danger'>Failed to send. Try again.</span>";
+                }
+            } catch (error) {
+                statusDiv.innerHTML = "<span class='text-danger'>Something went wrong.</span>";
+            }
         });
-        const data = await res.json();
-
-        if (data.success) {
-            status.innerHTML = `<div class="alert alert-success py-2 small"><i class="bi bi-check-circle me-1"></i>${data.message}</div>`;
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-        } else {
-            status.innerHTML = `<div class="alert alert-danger py-2 small">${data.error || 'Something went wrong.'}</div>`;
-        }
-    } catch {
-        status.innerHTML = `<div class="alert alert-danger py-2 small">Network error. Please try again.</div>`;
     }
 
-    btn.disabled = false;
-    btn.innerHTML = `<i class="bi bi-send me-2"></i>Send Message`;
-}
+});
 
 // ---- ACTIVE NAV LINK ----
 const sections = document.querySelectorAll('section[id]');

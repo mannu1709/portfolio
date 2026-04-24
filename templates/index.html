@@ -222,7 +222,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card bg-body-secondary border-secondary h-100 p-4 skill-card">
                         <div class="fs-1 mb-3">
-                            <img src="{{ url_for('static', filename='images/Tools.png') }}" alt="Supabase icon"
+                            <img src="{{ url_for('static', filename='images/tools.png') }}" alt="Supabase icon"
                                 class="skill-icon-image">
                         </div>
                         <h5 class="fw-bold mb-1">Tools & DevOps</h5>
@@ -366,7 +366,7 @@
                     <ul class="list-unstyled d-flex flex-column gap-3">
                         <li>
                             <a href="#" class="text-secondary text-decoration-none d-flex align-items-center gap-2">
-                                <i class="bi bi-telephone text-primary"></i> 78790977772
+                                <i class="bi bi-telephone text-primary"></i> 7879097772
                             </a>
                         </li>
                         <li>
@@ -392,28 +392,37 @@
 
                 <div class="col-lg-7">
                     <div id="formStatus" class="mb-3" style="min-height:24px;"></div>
-                    <div class="d-flex flex-column gap-3">
-                        <div>
-                            <label class="form-label text-secondary small text-uppercase" for="name">Name</label>
-                            <input type="text" class="form-control bg-body-secondary border-secondary" id="name"
-                                placeholder="Your name" />
-                        </div>
-                        <div>
-                            <label class="form-label text-secondary small text-uppercase" for="email">Email</label>
-                            <input type="email" class="form-control bg-body-secondary border-secondary" id="email"
-                                placeholder="your@email.com" />
-                        </div>
-                        <div>
-                            <label class="form-label text-secondary small text-uppercase" for="message">Message</label>
-                            <textarea class="form-control bg-body-secondary border-secondary" id="message" rows="5"
-                                placeholder="Tell me about your project..."></textarea>
-                        </div>
-                        <button class="btn btn-primary w-100 py-2" id="sendBtn" onclick="sendContact()">
-                            <i class="bi bi-send me-2"></i>Send Message
-                        </button>
-                    </div>
-                </div>
 
+                    <form id="contactForm" action="https://formspree.io/f/xrerrdow" method="POST">
+                        <div class="d-flex flex-column gap-3">
+
+                            <div>
+                                <label class="form-label text-secondary small text-uppercase" for="name">Name</label>
+                                <input type="text" name="name" class="form-control bg-body-secondary border-secondary"
+                                    id="name" placeholder="Your name" required />
+                            </div>
+
+                            <div>
+                                <label class="form-label text-secondary small text-uppercase" for="email">Email</label>
+                                <input type="email" name="email" class="form-control bg-body-secondary border-secondary"
+                                    id="email" placeholder="your@email.com" required />
+                            </div>
+
+                            <div>
+                                <label class="form-label text-secondary small text-uppercase"
+                                    for="message">Message</label>
+                                <textarea name="message" class="form-control bg-body-secondary border-secondary"
+                                    id="message" rows="5" placeholder="Tell me about your project..."
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 py-2">
+                                <i class="bi bi-send me-2"></i>Send Message
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
